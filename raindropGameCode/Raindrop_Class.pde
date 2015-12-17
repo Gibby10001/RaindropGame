@@ -1,24 +1,28 @@
 class raindrop {
+  float diam = 30;
   PVector loc, vel, grav;
-  int diam, diam2;
   //give each variables values
-  raindrop() {
-    int diam = 30;
-    int diam2 = 40;
-    loc = new PVector(random(diam, width-diam), random(diam, height-diam));
-    vel = new PVector(4, 5);
+  raindrop(float x, float y) {
+    loc = new PVector(x, y);
+    vel = PVector.random2D();
     grav = new PVector(0, 0.1);
   }
   void display() {
-    fill(random(255), random(50), random(100, 255));
+    fill(0,0,200);
     noStroke();
-    ellipse(loc.x, loc.y, diam, diam2);
+    ellipse(loc.x, loc.y, 30, diam);
   }
   void fall() {
     loc.add(vel);
     vel.add(grav);
   }
-  //void reset(){
-
-  //}
+  void reset() {
+    loc.y = 0;
+    loc.x = random(width);
+      vel = PVector.random2D();
+    vel.add(grav);
+  }
+  boolean isInContactWith(PVector mo){
+    return mo.dist(loc) <= diam/2;
+  }
 }
