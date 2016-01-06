@@ -38,13 +38,11 @@ void draw() {
     stroke(255);
     fill(0);
     rect(10, 550, 450, 125);
-    String s = "Try to stay dry as long as possible.";
-    String p = "If you let more than 50 drops pass";
-    String c = "YOU LOSE!";
     fill(255);
-    text(s, 17, 500, 500, 125);
-    text(p, 17, 550, 500, 175);
-    text(c, 17, 600, 500, 225);
+    text("Try to stay dry as long as possible.",width/2,200);
+     text("If you let more than 50 drops pass",width/2,300);
+      text("YOU LOSE!",width/2,400);
+
   }
   if (screen == 3) {
     if (keyPressed == true) {
@@ -68,15 +66,15 @@ void game() {
     if (d.reset()) {                 //if d resets
       raindrops.remove(e);    //remove drop at location e
     }
-    //if (d.isInContactWith(mo)) {
-     // d.reset();
-      //score+=1;
-    //}
-    b.display();
+    if (d.isInContactWith(mo)) {
+      d.reset();
+      score+=1;
+    }
     textSize(32);
     fill(0);
     text(score, width/2, 700);
   }
+  b.display();
     textSize(32);
   text(score, 100, 680);
 }

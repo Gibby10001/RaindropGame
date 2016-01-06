@@ -24,11 +24,11 @@ class raindrop {
       return false;
     }
   }
-  //boolean isInContactWith(bucket m) {
-    //if ( m.loc.dist(loc) <= diam/2) {
-      //return true;
-    //} else {
-      //return false;
-    //}
-  //}
+  boolean isInContactWith(bucket m) {
+    if (  <= diam/2) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
