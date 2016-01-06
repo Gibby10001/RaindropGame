@@ -1,9 +1,9 @@
-class raindrop {
+class Raindrop {
   float diam = 30;
   int score;
   PVector loc, vel, grav;
 
-  raindrop(float x, float y) {
+  Raindrop(float x, float y) {
     loc = new PVector(x, y);
     vel = PVector.random2D();
     grav = new PVector(0, 0.1);
@@ -25,7 +25,8 @@ class raindrop {
     }
   }
   boolean isInContactWith(bucket m) {
-    if (  <= diam/2) {
+    if ( loc.dist(m.loc) <= diam/2 + 20) {
+      println("caught a raindrop in frame " + frameCount);
       return true;
     } else {
       return false;

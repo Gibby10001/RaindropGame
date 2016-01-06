@@ -1,13 +1,16 @@
-PVector loc;
-PImage umb; 
+
 class bucket {
-  bucket(){
-    loc = new PVector(mouseX,mouseY);
+  PVector loc;
+  PImage umb;
+
+  bucket() {
+    loc = new PVector(mouseX, mouseY);
     //umb = loadImage("umb.jpg");
-}
-void display(){
-  fill(255);
-  ellipse(mouseX,mouseY,40,40);
-  //image(umb,mouseX,height-100);
-}
+  }
+  void display() {
+    loc.set(mouseX,mouseY);
+    fill(255);
+    ellipse(loc.x, loc.y, 40, 40);
+    //image(umb,mouseX,height-100);
+  }
 }
