@@ -1,10 +1,10 @@
-PVector loc;
-float diam;
+PImage umb; 
 class bucket {
   bucket(){
-    loc = new PVector(mouseX,mouseY);
+    umb = loadImage("umb.jpg");
 }
 void display(){
-  ellipse(mouseX,mouseY,random(20,40),random(20,40));
+  fill(0);
+  image(umb,mouseX,height-100);
 }
 }
