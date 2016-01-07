@@ -20,7 +20,7 @@ class Raindrop { //raindrop class
   }
   boolean reset() { //resets position of raindrops if falls past height
     if (loc.y > height + diam/2) {
-      return true;
+      return true; //returns true or returns false
     } else {
       return false;
     }
@@ -28,7 +28,7 @@ class Raindrop { //raindrop class
   boolean isInContactWith(bucket m) { //checks to see if mouse is in contact with bucket
     if ( loc.dist(m.loc) <= diam/2 + 25) {
       println("Staying Dry"); //prints if a raindrop is removed
-      return true;
+      return true;//returns true or returns false
     } else {
       return false;
     }
