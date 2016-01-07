@@ -6,11 +6,13 @@ class Raindrop {
   Raindrop(float x, float y) {
     loc = new PVector(x, y);
     vel = PVector.random2D();
-    grav = new PVector(0, 0.1);
+    grav = new PVector(0, 0.08);
   }
   void display() {
     fill(0, 0, 200);
     noStroke();
+    noStroke();  
+    triangle(loc.x-diam/2, loc.y, loc.x+diam/2, loc.y, loc.x, loc.y-diam);
     ellipse(loc.x, loc.y, diam, diam);
   }
   void fall() {
@@ -26,7 +28,7 @@ class Raindrop {
   }
   boolean isInContactWith(bucket m) {
     if ( loc.dist(m.loc) <= diam/2 + 20) {
-      println("caught a raindrop in frame " + frameCount);
+      println("Stay Dry");
       return true;
     } else {
       return false;

@@ -10,7 +10,7 @@ class bucket {
   void display() {
     loc.set(mouseX,mouseY);
     fill(255);
-    ellipse(loc.x, loc.y, 40, 40);
+    ellipse(loc.x, loc.y, 50, 50);
     //image(umb,mouseX,height-100);
   }
 }
